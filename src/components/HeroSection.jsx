@@ -74,7 +74,7 @@ const HeroSection = () => {
             {/* Bottom Center Content */}
             <div className="absolute bottom-16 left-0 w-full z-10 flex flex-col items-center text-center px-6">
                 <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-                    The Coffee Club
+                    The Coffee Shop
                 </h1>
                 <p className="max-w-xl text-lg md:text-xl text-earth-accent mb-8 font-light leading-relaxed">
                     &ldquo;Enjoy fresh, baked daily with locally sourced ingredients.&rdquo;

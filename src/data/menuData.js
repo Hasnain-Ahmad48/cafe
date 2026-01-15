@@ -3,7 +3,7 @@ export const menuData = {
         {
             id: 'fast-food',
             title: 'Fast Food',
-            image: 'https://images.unsplash.com/photo-1561758033-d8f19662cb5b?auto=format&fit=crop&q=80',
+            image: '/fastfood.jpg',
             description: 'Quick bites made with premium ingredients.',
             items: [
                 { name: 'Gourmet Burger', price: '$12' },
@@ -16,7 +16,7 @@ export const menuData = {
         {
             id: 'desi-tarka',
             title: 'Desi Tarka',
-            image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80',
+            image: 'desi.jpg',
             description: 'Authentic local flavors with a modern twist.',
             items: [
                 { name: 'Chicken Karahi', price: '$18' },
@@ -29,7 +29,7 @@ export const menuData = {
         {
             id: 'dessert',
             title: 'Dessert',
-            image: 'https://images.unsplash.com/photo-1563729784474-d779b95ca91b?auto=format&fit=crop&q=80',
+            image: 'dessert.jpg',
             description: 'Sweet indulgences baked fresh daily.',
             items: [
                 { name: 'Chocolate Lava Cake', price: '$9' },
