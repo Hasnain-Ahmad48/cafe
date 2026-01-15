@@ -22,7 +22,7 @@ const MenuCategoryCard = ({ category, onClick }) => {
 
                 <button
                     onClick={() => onClick(category.id)}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-earth-accent text-earth-dark font-bold text-sm uppercase rounded-full tracking-widest hover:bg-white transition-all duration-300 transform group-hover:-translate-y-1"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-earth-accent text-earth-dark font-bold text-sm uppercase rounded-full tracking-widest hover:bg-earth-dark hover:text-white transition-all duration-300 transform group-hover:-translate-y-1"
                 >
                     Explore
                     <ArrowRight size={16} />
