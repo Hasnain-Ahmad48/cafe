@@ -80,7 +80,7 @@ const HeroSection = () => {
                     &ldquo;Enjoy fresh, baked daily with locally sourced ingredients.&rdquo;
                 </p>
 
-                <button className="px-8 py-3 bg-earth-accent text-earth-dark font-semibold text-lg rounded-full cursor-default hover:bg-earth-hover hover:text-white transition-all duration-300 shadow-lg shadow-earth-accent/10 border-2 border-transparent hover:border-earth-accent/20">
+                <button className="px-8 py-3 bg-earth-accent text-earth-dark font-semibold text-lg rounded-full cursor-pointer hover:bg-earth-dark hover:text-white transition-all duration-300 shadow-lg shadow-earth-accent/10 border-2 border-transparent hover:border-earth-accent/20">
                     View Menu
                 </button>
             </div>

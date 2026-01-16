@@ -90,7 +90,7 @@ const CategoryPage = () => {
         {/* Footer Navigation */}
         <div className="mt-12 text-center">
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/#menu-section")}
             className="text-earth-soft hover:text-white transition-colors duration-300 font-medium uppercase tracking-widest text-sm"
           >
             View Other Categories

@@ -21,7 +21,7 @@ const Home = () => {
       <section id="menu-section">
         <MenuSection />
       </section>
-      <section id="deal-section">
+      <section id="deals-section">
         <DealsSection />
       </section>
     </>

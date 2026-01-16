@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const DealsSection = () => {
     return (
-        <section className="py-20 bg-[#354b43]">
+        <section className="py-20 bg-earth-dark">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-[#ffffff] mb-4 font-serif">Exclusive Deals</h2>
@@ -18,7 +18,7 @@ const DealsSection = () => {
                     {dealsData.categories.map((deal) => (
                         <div
                             key={deal.id}
-                            className="group relative overflow-hidden rounded-xl bg-[#617c73] transition-transform hover:-translate-y-2 hover:shadow-xl"
+                            className="group relative overflow-hidden rounded-2xl bg-earth-card hover:bg-earth-card-alt transition-colors duration-500 shadow-xl shadow-black/20"
                         >
                             <div className="h-64 overflow-hidden">
                                 <img
