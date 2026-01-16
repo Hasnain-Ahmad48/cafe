@@ -38,7 +38,7 @@
 //             {dealCategory.title}
 //           </h1>
 //         </div>
-    
+
 //       </div>
 
 //       {/* Breadcrumb / Back */}
@@ -95,15 +95,14 @@
 
 // export default DealPage;
 
-
-
-import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { dealsData } from "../data/dealsData";
+import React, {useEffect} from "react";
+import {useParams, Link, Navigate, useNavigate} from "react-router-dom";
+import {ArrowLeft} from "lucide-react";
+import {dealsData} from "../data/dealsData";
 
 const DealPage = () => {
-  const { dealId } = useParams();
+  const {dealId} = useParams();
+  const navigate = useNavigate();
   const dealCategory = dealsData.categories.find(c => c.id === dealId);
 
   useEffect(() => {
@@ -114,7 +113,10 @@ const DealPage = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#519251] text-[#05110d]">
         <h2 className="text-3xl font-bold mb-4">Deal Not Found</h2>
-        <Link to="/" className="text-[#648978] hover:underline">
+        <Link
+          to="/"
+          className="text-[#648978] hover:underline"
+        >
           Back to Home
         </Link>
       </div>
@@ -186,6 +188,15 @@ const DealPage = () => {
               </div>
             ))}
           </div>
+        </div>
+        {/* footer navigation */}
+        <div className="mt-5 text-center">
+          <button
+            onClick={() => navigate("/#deals-section")}
+            className="text-earth-soft hover:text-white transition-colors duration-300 font-medium uppercase tracking-widest text-sm"
+          >
+            View other deals
+          </button>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ export const menuData = {
         {
             id: 'desi-tarka',
             title: 'Desi Tarka',
-            image: 'desi.jpg',
+            image: '/desi.jpg',
             description: 'Authentic local flavors with a modern twist.',
             items: [
                 { name: 'Chicken Karahi', price: '$18' },
@@ -29,7 +29,7 @@ export const menuData = {
         {
             id: 'dessert',
             title: 'Dessert',
-            image: 'dessert.jpg',
+            image: '/dessert.jpg',
             description: 'Sweet indulgences baked fresh daily.',
             items: [
                 { name: 'Chocolate Lava Cake', price: '$9' },

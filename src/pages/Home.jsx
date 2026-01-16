@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import MenuSection from "../components/MenuSection";
 import DealsSection from "../components/DealsSection";
 import {useLocation} from "react-router-dom";
+import GallerySection from "../components/GallerySection";
 
 const Home = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const Home = () => {
       <section id="deals-section">
         <DealsSection />
       </section>
+      <GallerySection />
     </>
   );
 };
