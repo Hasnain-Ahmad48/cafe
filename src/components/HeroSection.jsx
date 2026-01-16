@@ -44,9 +44,9 @@ const HeroSection = () => {
                 muted={isMuted} // Muted required for auto-play policy
                 playsInline
                 // Using a reliable placeholder video if local file isn't present yet, user can replace this source
-                src="coffeeclub.mp4"
+                src="video.mp4"
             >
-                <source src="/hero-video.mp4" type="video/mp4" />
+                <source src="/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 

@@ -1,15 +1,15 @@
-import React from 'react'
-import { galleryData } from '../data/galleryData';
+import React from "react";
+import {galleryData} from "../data/galleryData";
 
 const GallerySection = () => {
   return (
-    <section className="bg-[#05110d] py-20 px-6">
+    <section className="bg-earth-dark py-20 px-6">
       {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#f4f1ea] mb-4">
           Our Café Moments
         </h2>
-        <p className="text-[#7fa989] text-lg">
+        <p className="text-earth-soft text-lg">
           A glimpse of the flavors, warmth, and atmosphere we serve daily
         </p>
       </div>
@@ -19,7 +19,7 @@ const GallerySection = () => {
         {galleryData.galleryImages.map((img, index) => (
           <div
             key={index}
-            className="relative overflow-hidden rounded-2xl bg-[#354b44] shadow-lg group break-inside-avoid"
+            className="relative overflow-hidden rounded-2xl bg-earth-hover shadow-lg group break-inside-avoid"
           >
             <img
               src={img.src}
@@ -28,7 +28,7 @@ const GallerySection = () => {
             />
 
             {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-[#354b44]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+            <div className="absolute inset-0 bg-earth-hover/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
               <span className="p-4 text-[#f4f1ea] text-sm font-medium tracking-wide">
                 {img.caption}
               </span>
@@ -37,7 +37,7 @@ const GallerySection = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default GallerySection
+export default GallerySection;
