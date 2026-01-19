@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 const HeroSection = () => {
@@ -80,9 +81,14 @@ const HeroSection = () => {
                     &ldquo;Enjoy fresh, baked daily with locally sourced ingredients.&rdquo;
                 </p>
 
-                <button className="px-8 py-3 bg-earth-accent text-earth-dark font-semibold text-lg rounded-full cursor-pointer hover:bg-earth-dark hover:text-white transition-all duration-300 shadow-lg shadow-earth-accent/10 border-2 border-transparent hover:border-earth-accent/20">
-                    View Menu
-                </button>
+                <div className="flex gap-4">
+                    <Link to="/#menu-section" className="px-8 py-3 bg-earth-accent text-earth-dark font-semibold text-lg rounded-full cursor-pointer hover:bg-earth-dark hover:text-white transition-all duration-300 shadow-lg shadow-earth-accent/10 border-2 border-transparent hover:border-earth-accent/20">
+                        View Menu
+                    </Link>
+                    <Link to="/reservation" className="px-8 py-3 bg-transparent text-white font-semibold text-lg rounded-full cursor-pointer hover:bg-earth-accent hover:text-earth-dark transition-all duration-300 border-2 border-earth-accent backdrop-blur-sm">
+                        Reservation
+                    </Link>
+                </div>
             </div>
         </div>
     );
