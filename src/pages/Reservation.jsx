@@ -43,12 +43,10 @@ const Reservation = () => {
     Date:${formData.date}
     Time:${formData.time}
     Guests:${formData.guests}
-
-    Special Request:${formData.note || "None"}
-    
+    Special Request:${formData.requests || "None"}
     `;
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(whatsappURL, "_blank");
   };
