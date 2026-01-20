@@ -15,6 +15,7 @@ export default {
                 'earth-card-alt': '#648978',
                 'earth-soft': '#7fa989',
                 'earth-soft-alt': '#72a292',
+                'earth-light': '#f4f1ea',
             },
             fontFamily: {
                 // You can add custom fonts here if imported in index.css

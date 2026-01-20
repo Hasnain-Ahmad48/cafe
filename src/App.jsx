@@ -4,9 +4,12 @@ import Home from './pages/Home';
 import DealPage from './pages/DealPage';
 import CategoryPage from './pages/CategoryPage';
 import Reservation from './pages/Reservation';
+import Navbar from './components/Navbar';
+
 function App() {
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/menu/:categoryId" element={<CategoryPage />} />
