@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import CardNav from './CardNav';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -128,85 +129,15 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-earth-light hover:text-earth-accent p-2 rounded-md focus:outline-none"
-                        >
-                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
                 </div>
+
+                {/* Mobile Navigation (CardNav) */}
+                <CardNav />
             </div>
 
-            {/* Mobile Menu */}
-            <div
-                className={`md:hidden bg-earth-dark overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-            >
-                <div className="px-4 pt-2 pb-6 space-y-1">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className="block px-3 py-3 text-base font-medium text-earth-light hover:text-earth-accent border-b border-earth-hover"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
 
-                    {/* Mobile Menu Dropdown */}
-                    <div>
-                        <button
-                            onClick={() => toggleDropdown('menu')}
-                            className="w-full flex justify-between items-center px-3 py-3 text-base font-medium text-earth-light hover:text-earth-accent border-b border-earth-hover"
-                        >
-                            Menu <ChevronDown className={`w-4 h-4 transform transition-transform ${activeDropdown === 'menu' ? 'rotate-180' : ''}`} />
-                        </button>
-                        <div className={`${activeDropdown === 'menu' ? 'block' : 'hidden'} bg-earth-hover`}>
-                            {menuItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    to={item.path}
-                                    className="block pl-8 pr-3 py-2 text-sm text-earth-light hover:text-white"
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
 
-                    {/* Mobile Deals Dropdown */}
-                    <div>
-                        <button
-                            onClick={() => toggleDropdown('deals')}
-                            className="w-full flex justify-between items-center px-3 py-3 text-base font-medium text-earth-light hover:text-earth-accent border-b border-earth-hover"
-                        >
-                            Deals <ChevronDown className={`w-4 h-4 transform transition-transform ${activeDropdown === 'deals' ? 'rotate-180' : ''}`} />
-                        </button>
-                        <div className={`${activeDropdown === 'deals' ? 'block' : 'hidden'} bg-earth-hover`}>
-                            {dealItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    to={item.path}
-                                    className="block pl-8 pr-3 py-2 text-sm text-earth-light hover:text-white"
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-
-                    <Link
-                        to="/reservation"
-                        className="block w-full text-center mt-4 bg-earth-accent text-earth-dark px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors"
-                    >
-                        Reservation
-                    </Link>
-                </div>
-            </div>
-        </nav>
+        </nav >
     );
 };
 

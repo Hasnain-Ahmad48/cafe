@@ -36,7 +36,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-screen overflow-hidden bg-earth-dark">
+        <div id='home' className="relative w-full h-screen overflow-hidden bg-earth-dark">
             {/* Background Video */}
             <video
                 ref={videoRef}

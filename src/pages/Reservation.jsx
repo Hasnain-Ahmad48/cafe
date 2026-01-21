@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Calendar, Clock, Users, ChevronDown} from "lucide-react";
+import {Calendar, Clock, Users, ChevronDown,Link} from "lucide-react";
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -290,7 +290,7 @@ const Reservation = () => {
                   <p className="text-earth-soft text-xs">
                     Maximum table capacity is 8 guests
                   </p>
-                  {(formData.guests > 8) && (
+                  {formData.guests > 8 && (
                     <p className="text-earth-accent text-xs font-semibold animate-pulse">
                       Large Group? Contact Us directly.
                     </p>
@@ -331,6 +331,12 @@ const Reservation = () => {
             </form>
           )}
         </div>
+      <Link
+        to="/"
+        className="text-[#648978] hover:underline"
+      >
+        Back to Home
+      </Link>
       </div>
     </div>
   );
