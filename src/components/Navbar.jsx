@@ -37,7 +37,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/#about' }, // Assuming anchor for now
+        { name: 'About Us', path: '/about' },
     ];
 
     const menuItems = [
