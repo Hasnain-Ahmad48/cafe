@@ -74,13 +74,13 @@ const CategoryPage = () => {
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  {/* Dotted Leader for desktop */}
-                  <div className="hidden md:block flex-grow border-b-2 border-dotted border-earth-soft/30 w-32 xl:w-64 opacity-50"></div>
-
-                  <span className="text-xl font-bold text-earth-accent">
+                <div className="text-right w-full md:w-auto flex flex-row md:flex-col justify-between items-center md:items-end">
+                  <span className="text-3xl font-bold text-earth-accent md:mb-2">
                     {item.price}
                   </span>
+                  <button className="bg-earth-dark text-[#f4f1ea] px-6 py-2 rounded-lg text-sm font-semibold hover:bg-[#648978] transition-colors">
+                    Order Now
+                  </button>
                 </div>
               </li>
             ))}
