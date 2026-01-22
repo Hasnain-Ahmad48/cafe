@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState,useEffect } from "react";
 import { gsap } from "gsap";
 import { GoArrowUpRight } from "react-icons/go";
 import { Link } from "react-router-dom";
@@ -9,6 +9,19 @@ const CardNav = () => {
     const navRef = useRef(null);
     const cardsRef = useRef([]);
     const tlRef = useRef(null);
+
+useEffect(() => {
+    if (isHamburgerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup (important)
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isHamburgerOpen]);
 
     // Café Data Links
     const items = [

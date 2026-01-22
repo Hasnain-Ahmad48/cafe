@@ -1,4 +1,5 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+
 import {useParams, Link, useNavigate} from "react-router-dom";
 import {ArrowLeft} from "lucide-react";
 import {menuData} from "../data/menuData";
@@ -27,6 +28,31 @@ const CategoryPage = () => {
       </div>
     );
   }
+
+  //order
+  const [isOrderOpen, setIsOrderOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  useEffect(() => {
+    if (isOrderOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup (important)
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOrderOpen]);
+
+  const [orderData, setOrderData] = useState({
+    name: "",
+    address: "",
+    mobile: "",
+    quantity: 1,
+    payment: "COD",
+  });
 
   return (
     <div className="min-h-screen bg-earth-dark">
@@ -78,7 +104,13 @@ const CategoryPage = () => {
                   <span className="text-3xl font-bold text-earth-accent md:mb-2">
                     {item.price}
                   </span>
-                  <button className="bg-earth-dark text-[#f4f1ea] px-6 py-2 rounded-lg text-sm font-semibold hover:bg-[#648978] transition-colors">
+                  <button
+                    onClick={() => {
+                      setSelectedItem(item);
+                      setIsOrderOpen(true);
+                    }}
+                    className="bg-earth-dark text-[#f4f1ea] px-6 py-2 rounded-lg text-sm font-semibold hover:bg-[#648978] transition-colors"
+                  >
                     Order Now
                   </button>
                 </div>
@@ -97,6 +129,133 @@ const CategoryPage = () => {
           </button>
         </div>
       </div>
+      {isOrderOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setIsOrderOpen(false)}
+        >
+          <div
+            className="bg-earth-dark w-[90%] max-w-lg rounded-2xl p-6 border border-earth-soft/30 relative"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOrderOpen(false)}
+              className="absolute top-4 right-4 text-earth-soft hover:text-white"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Order {selectedItem?.name}
+            </h2>
+            <p className="text-earth-accent mb-6">
+              Price: {selectedItem?.price}
+            </p>
+
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                console.log({
+                  item: selectedItem,
+                  ...orderData,
+                });
+                alert("Order placed successfully!");
+                setIsOrderOpen(false);
+              }}
+              className="space-y-4"
+            >
+              {/* Name */}
+              <input
+                type="text"
+                required
+                placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-lg bg-earth-card/10 text-white placeholder-earth-soft outline-none border border-earth-soft/30 focus:border-earth-accent"
+                onChange={e =>
+                  setOrderData({...orderData, name: e.target.value})
+                }
+              />
+
+              {/* Address */}
+              <textarea
+                required
+                placeholder="Delivery Address"
+                className="w-full px-4 py-3 rounded-lg bg-earth-card/10 text-white placeholder-earth-soft outline-none border border-earth-soft/30 focus:border-earth-accent"
+                onChange={e =>
+                  setOrderData({...orderData, address: e.target.value})
+                }
+              />
+
+              {/* Mobile */}
+              <input
+                type="tel"
+                required
+                placeholder="Mobile Number"
+                className="w-full px-4 py-3 rounded-lg bg-earth-card/10 text-white placeholder-earth-soft outline-none border border-earth-soft/30 focus:border-earth-accent"
+                onChange={e =>
+                  setOrderData({...orderData, mobile: e.target.value})
+                }
+              />
+
+              {/* Quantity */}
+              <input
+                type="number"
+                min="1"
+                value={orderData.quantity}
+                className="w-full px-4 py-3 rounded-lg bg-earth-card/10 text-white outline-none border border-earth-soft/30 focus:border-earth-accent"
+                onChange={e =>
+                  setOrderData({...orderData, quantity: e.target.value})
+                }
+              />
+
+              {/* Payment */}
+              <div className="text-earth-soft text-sm">Payment Method</div>
+              <div className="px-4 py-3 rounded-lg bg-earth-card/10 text-white border border-earth-soft/30">
+                Cash on Delivery
+              </div>
+
+              {/* Submit */}
+              <button
+                type="button"
+                onClick={() => {
+                  const phoneNumber = "923484674394"; // ✅ cafe WhatsApp number (with country code)
+                  if (
+                    !orderData.name ||
+                    !orderData.mobile ||
+                    !orderData.address
+                  ) {
+                    alert("Please fill all required fields");
+                    return;
+                  }
+
+                  const message = `
+                  🛒  *New Cafe Order*
+
+                  🍽️ Item: ${selectedItem?.name}
+                  📦 Quantity: ${orderData.quantity}
+
+                  👤 Name: ${orderData.name}
+                  📞 Mobile: ${orderData.mobile}
+                  🏠 Address: ${orderData.address}
+
+                  💰 Payment: Cash on Delivery
+                  -------------------------
+                  `.trim();
+
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                    message,
+                  )}`;
+
+                  window.open(whatsappUrl, "_blank");
+                }}
+                className="w-full bg-earth-accent text-earth-dark py-3 rounded-full font-semibold hover:bg-white transition-colors"
+              >
+                Confirm Order on WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
