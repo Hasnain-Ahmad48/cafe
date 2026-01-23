@@ -26,7 +26,7 @@ const Contact = () => {
 
                     {/* Phone Card */}
                     <a
-                        href="tel:+1234567890"
+                        href="tel:+923484674394"
                         className="group bg-earth-hover p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block text-center"
                     >
                         <div className="w-16 h-16 bg-earth-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-earth-accent transition-colors duration-300">
