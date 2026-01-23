@@ -6,11 +6,11 @@ export const menuData = {
             image: '/fastfood.jpg',
             description: 'Quick bites made with premium ingredients.',
             items: [
-                { name: 'Gourmet Burger', price: '$12' },
-                { name: 'Crispy Chicken Sandwich', price: '$11' },
-                { name: 'Truffle Fries', price: '$8' },
-                { name: 'BBQ Wings', price: '$10' },
-                { name: 'Veggie Wrap', price: '$9' }
+                { name: 'Gourmet Burger', price: 'RS 500' },
+                { name: 'Crispy Chicken Sandwich', price: 'RS 450' },
+                { name: 'Truffle Fries', price: 'RS 300' },
+                { name: 'BBQ Wings', price: 'RS 400' },
+                { name: 'Veggie Wrap', price: 'RS 350' }
             ]
         },
         {
@@ -19,11 +19,11 @@ export const menuData = {
             image: '/desi.jpg',
             description: 'Authentic local flavors with a modern twist.',
             items: [
-                { name: 'Chicken Karahi', price: '$18' },
-                { name: 'Butter Naan', price: '$3' },
-                { name: 'Spicy Biryani', price: '$16' },
-                { name: 'Seekh Kebabs', price: '$14' },
-                { name: 'Paneer Masala', price: '$15' }
+                { name: 'Chicken Karahi', price: 'RS 180' },
+                { name: 'Butter Naan', price: 'RS 30' },
+                { name: 'Spicy Biryani', price: 'RS 160' },
+                { name: 'Seekh Kebabs', price: 'RS 140' },
+                { name: 'Paneer Masala', price: 'RS 150' }
             ]
         },
         {
@@ -32,11 +32,11 @@ export const menuData = {
             image: '/dessert.jpg',
             description: 'Sweet indulgences baked fresh daily.',
             items: [
-                { name: 'Chocolate Lava Cake', price: '$9' },
-                { name: 'New York Cheesecake', price: '$8' },
-                { name: 'Tiramisu', price: '$10' },
-                { name: 'Macarons (3pcs)', price: '$7' },
-                { name: 'Fruit Tart', price: '$8' }
+                { name: 'Chocolate Lava Cake', price: 'RS 1000' },
+                { name: 'New York Cheesecake', price: 'RS 800' },
+                { name: 'Tiramisu', price: 'RS 900' },
+                { name: 'Macarons (3pcs)', price: 'RS 700' },
+                { name: 'Fruit Tart', price: 'RS 800' }
             ]
         }
     ]

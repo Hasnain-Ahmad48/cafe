@@ -74,7 +74,7 @@ const CategoryPage = () => {
 
         <Link
           to="/#menu-section"
-          className="absolute top-8 left-8 flex items-center gap-2 text-white/80 hover:text-earth-accent transition-colors duration-300"
+          className="absolute top-20 left-8 flex items-center gap-2 text-white/80 hover:text-earth-accent transition-colors duration-300"
         >
           <div className="p-2 bg-black/30 rounded-full backdrop-blur-sm hover:bg-black/50">
             <ArrowLeft size={24} />

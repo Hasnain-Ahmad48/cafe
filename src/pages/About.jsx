@@ -116,7 +116,17 @@ const About = () => {
                 <div
                   className={`w-32 h-32 mx-auto rounded-full ${member.color} mb-4 flex items-center justify-center text-2xl font-bold text-earth-light/50 border-4 border-earth-hover group-hover:border-earth-accent transition-colors duration-300`}
                 >
-                  {member.name.charAt(0)}
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-earth-light/50">
+                      {member.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold text-earth-light">
                   {member.name}
@@ -181,9 +191,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      
     </div>
-    
   );
 };
 

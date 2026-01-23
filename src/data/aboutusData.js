@@ -14,10 +14,10 @@ export const aboutusData = {
     },
   ],
   team: [
-    {name: "Sarah J.", role: "Head Barista", color: "bg-[#4a3b32]"},
-    {name: "David M.", role: "Head Chef", color: "bg-[#5e4b35]"},
-    {name: "Emily R.", role: "Manager", color: "bg-[#3e5f50]"},
-    {name: "Michael T.", role: "Pastry Chef", color: "bg-[#6b5b45]"},
+    {name: "Emily R.", role: "Manager", color: "bg-[#3e5f50]",image:"/team/manager.jpg"},
+    {name: "Sarah J.", role: "Head Barista", color: "bg-[#4a3b32]",image:"/team/brista.jpg"},
+    {name: "David M.", role: "Head Chef", color: "bg-[#5e4b35]",image:"/team/chef.jpg"},
+    {name: "Michael T.", role: "Pastry Chef", color: "bg-[#6b5b45]",image:"/team/chef2.jpg"},
   ],
   timeline: [
     {

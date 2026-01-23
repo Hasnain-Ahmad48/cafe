@@ -34,7 +34,7 @@ const Contact = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-2">Call Us</h3>
                         <p className="text-earth-light/80 group-hover:text-white transition-colors">
-                            +1 (234) 567-890
+                            +92 348-4674394
                         </p>
                         <p className="text-earth-soft text-sm mt-2">Tap to call</p>
                     </a>

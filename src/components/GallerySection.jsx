@@ -15,7 +15,7 @@ const GallerySection = () => {
       </div>
 
       {/* Masonry Gallery */}
-      <div className="max-w-6xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+     <div className="max-w-6xl mx-auto columns-2 md:columns-3 lg:columns-3 gap-6 space-y-6">
         {galleryData.galleryImages.map((img, index) => (
           <div
             key={index}
